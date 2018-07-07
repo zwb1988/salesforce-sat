@@ -1,4 +1,8 @@
 language: java
 sudo: false # faster builds
-
+addons:
+    apt:
+        packages:
+            - python3
+    
 script: mvn package
