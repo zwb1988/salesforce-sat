@@ -1,8 +1,9 @@
 language: java
 sudo: false # faster builds
-addons:
-    apt:
-        packages:
-            - python3
-    
-script: mvn package
+
+before_install: # or any other customizable place
+    - source ~/virtualenv/python3.6/bin/activate
+    - python --version
+
+notifications:
+    email: false
