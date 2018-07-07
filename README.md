@@ -1,4 +1,4 @@
-# Salesforce Automation Testing Library 
+# Salesforce Automation Testing Library ![Build Status](https://travis-ci.org/zwb1988/salesforce-sat.svg?branch=master)
 
 A set of wrappers classes for automation testing in Salesforce's Lightning by using Selenium.
 The library mainly wraps the common components on the Salesforce standard lightning interface.
