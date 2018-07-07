@@ -20,10 +20,9 @@ from AliasClassTemplates import classTemplate, propClassTemplate, enumClassTempl
 from PropertyWrapper import PropertyWrapper
 
 propertyFolder = "properties"
-resourcePath = os.path.abspath(os.path.join(
-    os.path.dirname(__file__), "../" + propertyFolder))
-aliasFilePath = os.path.abspath(os.path.join(
-    os.path.dirname(__file__), "../../java/sfdctest/ui/element"))
+resourcePath = os.path.abspath(os.path.join(os.path.dirname(__file__), "../../"))
+propertiesPath = os.path.join(resourcePath, propertyFolder)
+aliasFilePath = os.path.abspath(os.path.join(resourcePath, "../java/sfdctest/ui/element"))
 propfileExts = ["*.txt", "*.properties"]
 aliasFilename = "Alias.java"
 package = "sfdctest.ui.element"
@@ -48,7 +47,7 @@ def getPropClass(propertyWrappers):
     for wrapper in propertyWrappers:
         const_var_name = wrapper.name.upper()
         filename = wrapper.name
-        file_rel_path = os.path.join(propertyFolder, wrapper.getRelResourcePath(resourcePath)).replace("\\", "\\\\")
+        file_rel_path = os.path.join(propertyFolder, wrapper.getRelativePath(propertiesPath)).replace("\\", "\\\\")
         filename_items.append(
             f"public static final String {const_var_name} = \"{filename}\";\n")
         file_map_items.append(
@@ -107,7 +106,7 @@ def writeToFile(propertyWrappers, outPath, outFilename):
 
 def main():
     filepath_list = []
-    for folderPath, _, _ in os.walk(resourcePath):
+    for folderPath, _, _ in os.walk(propertiesPath):
         for ext in propfileExts:
             filepath_list += glob(os.path.join(folderPath, ext))
     print("Start parsing files...")

@@ -15,5 +15,5 @@ class PropertyWrapper:
     def getAllPropertyNames(self):
         return self.properties.keys()
 
-    def getRelResourcePath(self, resourcePath):
+    def getRelativePath(self, resourcePath):
         return os.path.relpath(self.filepath, resourcePath)

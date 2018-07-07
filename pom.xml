@@ -75,6 +75,26 @@
                     <target>1.8</target>
                 </configuration>
             </plugin>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>exec-maven-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <id>python-build</id>
+                        <phase>generate-sources</phase>
+                        <goals>
+                            <goal>exec</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <executable>python</executable>
+                    <workingDirectory>src/main/resources/tools/AliasClassGenerator</workingDirectory>
+                    <arguments>
+                        <argument>AliasClassGenerator.py</argument>
+                    </arguments>
+                </configuration>
+            </plugin>
         </plugins>
         <pluginManagement>
             <plugins>
