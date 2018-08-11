@@ -4,10 +4,10 @@ A set of wrappers classes for automation testing in Salesforce's Lightning by us
 The library mainly wraps the common components on the Salesforce standard lightning interface.
 
 The project at the current state is merely a initial version. There is only few component wrappers available.
-More commonly used component wrapper will be used in the future.
+More commonly used component wrappers will be added in the future.
 
 ## Example
-The code sample below demonstrate a Salesforce login with a change to the filter on the global search.
+The code sample below demonstrate the chromedriver opens a Salesforce login with a change to the filter on the global search in the lightning experience.
 ```java
 public class TestRun {
     public static void main(String[] args) {
